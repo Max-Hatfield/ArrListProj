@@ -4,11 +4,13 @@ public class car
 		private String color;
 		private String name;
 		private int hp;
-		public car(String c, String n, int h)
+		private int rice;
+		public car(String c, String n, int h, int r)
 		{
 		color = c;
 		name = n;
 		hp = h;
+		rice = r;
 		}
 		public String getColor()
 			{
@@ -33,6 +35,14 @@ public class car
 		public void setHp(int hp)
 			{
 				this.hp = hp;
+			}
+		public int getRice()
+			{
+				return rice;
+			}
+		public void setRice(int rice)
+			{
+				this.rice = rice;
 			}
 	
 	}

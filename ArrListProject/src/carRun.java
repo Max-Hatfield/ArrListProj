@@ -4,8 +4,10 @@ public class carRun
 	{
 		static ArrayList<car>carStat= new ArrayList<car>();
 		static Scanner userInput = new Scanner (System.in);
-static int money = 20;
-	static boolean m1 = true;
+static int money = 2000;
+	static boolean turbo = true;
+	static boolean Sc = true;
+	static boolean wheel= true;
 public static void main(String [] args)
 {
 	
@@ -16,7 +18,7 @@ public static void main(String [] args)
 
 public static void makeCars()
 {
-car supra = new car("red ", "supra ", 1000);
+car supra = new car("red ", "supra ", 1000, 10);
 carStat.add(supra);
 //System.out.println(carStat.get(0).getName());
 }
@@ -32,27 +34,27 @@ public static void chooseCar()
 	int choice = userInput.nextInt();
 	if(choice == 1)
 		{
-		car userCar = new car ("ugly green ", " civic " , 200);
+		car userCar = new car ("ugly green ", " civic " , 200, 2);
 		carStat.add(userCar);
 
 		}
 	if(choice == 2)
 		{
-			car userCar = new car ("silver ", " celica " , 180);
+			car userCar = new car ("silver ", " celica " , 180, 4);
 			carStat.add(userCar);
 
 
 		}
 	if(choice == 3)
 		{
-			car userCar = new car ("fancy grey ", " 3 series" , 220);
+			car userCar = new car ("fancy grey ", " 3 series" , 220, 3);
 			carStat.add(userCar);
 
 
 		}
 	if(choice == 4)
 		{
-			car userCar = new car ("flawless silver ", " FJ Cruiser" , 250);
+			car userCar = new car ("flawless silver ", " FJ Cruiser" , 250, 1);
 			carStat.add(userCar);
 
 
@@ -74,7 +76,7 @@ public static void menuChoice()
 	
 	if( choice ==1)
 		{
-			
+			shop();
 		}
 	if( choice ==2)
 		{
@@ -99,40 +101,56 @@ System.out.println("Welcome to shop, you have $" + money + "to spend, what would
 System.out.println("1. car performance mods");
 System.out.println("2. car tunes");
 System.out.println("3. customizations");
+System.out.println("4. go back to menu");
 int choice =userInput.nextInt();
 if( choice ==1)
 	{
 		System.out.println("welcome to modding marks, what mods do you want to try out?");
-		System.out.println("1. 100$ Turbo Charger + 35% hp");
-		System.out.println("2. 75$ Super Charger + 25% hp");
+		System.out.println("1. 100$ Turbo Charger + 25% hp");
+		System.out.println("2. 75$ Super Charger + 20% hp");
 		System.out.println("3. 20$ pirelli racing tires + 10% hp");
 		int mchoice = userInput.nextInt();
-		if(mchoice ==1 && m1 && money>=100 )
+		
+		
+		if(mchoice ==1 && turbo && money>=100 )
 			{
 			money-=100;
-			m1=false;
-			
+			turbo=false;
+			int TH = carStat.get(0).getHp()/4;
+			carStat.get(0).setHp(TH);
 				
 			}
 		if( mchoice ==2)
 			{
-				
+				money-=75;
+				Sc=false;
+				int TH = carStat.get(0).getHp()/5;
+				carStat.get(0).setHp(TH);
 			}
 		if( mchoice ==3)
 			{
-				
+				money-=20;
+				wheel=false;
+				int TH = carStat.get(0).getHp()/10;
+				carStat.get(0).setHp(TH);
 			}
+	
 	}
 if( choice ==2)
 	{
 		System.out.println("welcome to tuner tims what would you like today?");
 		System.out.println("1. Stage 1 tune: 10% hp gain");
-		System.out.println("2. Stage 2 tune: 20% hp gain");
-		System.out.println("3. Stage 3 tune: 30% hp gain");
-		
+		System.out.println("2. Stage 2 tune: 20% hp gain and 1 rice (anti lag pop)");
+		System.out.println("3. Stage 3 tune: 30% hp gain and 2 rice (shoots 3 foot flames)");
+		//add booleans and values
 	}
 if( choice ==3)
 	{
+		System.out.println("Welcome to carls customs, what can i do for you");
+		System.out.println("1. 10$ Giant wing: 5% hp gain and 2 rice");
+		System.out.println("2. 15$ Paint job: +1 rice, can change multiple times but can only get one rice ");
+		// add thing and booleans and values and  for color make an if statement to give rice
+		
 		
 	}
 
