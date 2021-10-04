@@ -8,7 +8,12 @@ static int money = 2000;
 	static boolean turbo = true;
 	static boolean Sc = true;
 	static boolean wheel= true;
-public static void main(String [] args)
+	static boolean one = true;
+	static boolean two = true;
+	static boolean three = true;
+	static boolean wing = true;
+	static boolean color = true;
+	public static void main(String [] args)
 {
 	
 	chooseCar();
@@ -118,7 +123,7 @@ if( choice ==1)
 			turbo=false;
 			int TH = carStat.get(0).getHp()/4;
 			carStat.get(0).setHp(TH);
-		System.out.println( "congrats you now have a turbo and have " + carStat.get(0) + " horsepower");
+		System.out.println( "congrats you now have a turbo and have " + carStat.get(0) + " horsepower and $" + money);
 			shop();
 				
 			}
@@ -134,35 +139,162 @@ if( choice ==1)
 				shop();
 
 			}
-		if( mchoice ==2)
+		if( mchoice ==2 && Sc && money>=75)
 			{
 				money-=75;
 				Sc=false;
 				int TH = carStat.get(0).getHp()/5;
 				carStat.get(0).setHp(TH);
+				System.out.println( "congrats you now have a supercharger and have " + carStat.get(0) + " horsepower and $" + money);
 			}
+		else if( money<=75)
+		{
+			System.out.println("you dont have enough money yuo only have " + money);
+			shop();
+
+		}
+	else if( Sc == false)
+		{
+			System.out.println("you already have one you can only have one!");
+			shop();
+		}
 		if( mchoice ==3)
 			{
 				money-=20;
 				wheel=false;
 				int TH = carStat.get(0).getHp()/10;
 				carStat.get(0).setHp(TH);
+				System.out.println( "congrats you now have wheels and have " + carStat.get(0).getHp() + " horsepower and $" + money);
 			}
+		else if( money<=20)
+		{
+			System.out.println("you dont have enough money yuo only have " + money);
+			shop();
+
+		}
+	else if( wheel == false)
+		{
+			System.out.println("you already have one you can only have one!");
+			shop();
+		}
 	
 	}
 if( choice ==2)
 	{
 		System.out.println("welcome to tuner tims what would you like today?");
-		System.out.println("1. Stage 1 tune: 10% hp gain");
-		System.out.println("2. Stage 2 tune: 20% hp gain and 1 rice (anti lag pop)");
-		System.out.println("3. Stage 3 tune: 30% hp gain and 2 rice (shoots 3 foot flames)");
-		//add booleans and values
+		System.out.println("1.7$ Stage 1 tune: 10% hp gain");
+		System.out.println("2. 15$ Stage 2 tune: 20% hp gain and 1 rice (anti lag pop)");
+		System.out.println("3. 20$ Stage 3 tune: 30% hp gain and 2 rice (shoots 3 foot flames)");
+		int choiceT = userInput.nextInt();
+		if(choiceT == 1 && one && money>=7)
+		{
+			one = false;
+			money-=7;
+			int oneH = carStat.get(0).getHp()/7;
+			carStat.get(0).setHp(oneH);
+			System.out.println(" you now have "+ carStat.get(0).getHp() + " and $"+ money +"and " + carStat.get(0).getRice() + " rice");
+			shop();
+		}
+		else if(money<7)
+		{
+			System.out.println("you dont have enough monmey you only have " +money);
+			shop();
+		}
+		else if(one == false)
+		{
+			System.out.println("you already have this tune!");
+		}
+			if(choiceT ==2 && two && money < 15)
+			{
+				two = false;
+				money-=15;
+				
+				int oneH = carStat.get(0).getHp()/20;
+				carStat.get(0).setRice(carStat.get(0).getRice()+1);
+
+				carStat.get(0).setHp(oneH);
+				System.out.println(" you now have "+ carStat.get(0).getHp() + " and $"+ money +"and " + carStat.get(0).getRice() + " rice");
+				shop();
+			}
+			else if(money<15)
+			{
+				System.out.println("you dont have enough monmey you only have " +money);
+				shop();
+			}
+			else if(two == false)
+			{
+				System.out.println("you already have this tune!");
+				shop();
+			}
+				if(choiceT==3 && three && money>=20)
+				{
+					money-=20;
+					int oneH = carStat.get(0).getHp()/30;
+					carStat.get(0).setRice(carStat.get(0).getRice()+2);
+					carStat.get(0).setHp(oneH);
+					System.out.println(" you now have "+ carStat.get(0).getHp() + " and $"+ money +"and " + carStat.get(0).getRice() + " rice");
+					shop();
+				}
+				else if(money<20)
+				{
+					System.out.println("you dont have enough monmey you only have " +money);
+					shop();
+				}
+				else if(three == false)
+				{
+					System.out.println("you already have this tune!");
+					shop();
+				}
 	}
 if( choice ==3)
 	{
 		System.out.println("Welcome to carls customs, what can i do for you");
-		System.out.println("1. 10$ Giant wing: 5% hp gain and 2 rice");
-		System.out.println("2. 15$ Paint job: +1 rice, can change multiple times but can only get one rice ");
+		System.out.println("1. 3$ Giant wing: 5% hp gain and 2 rice");
+		System.out.println("2. 10$ Paint job: +1 rice, can change multiple times but can only get one rice ");
+		int choiceC= userInput.nextInt();
+		if(choiceC == 1 && wing && money>=10)
+		{
+			money-=10;
+		wing = false;	
+		carStat.get(0).setRice(carStat.get(0).getRice() +3);
+		System.out.println("you now have a sick wing, bro! you have " + carStat.get(0).getRice() + " rice");
+		shop();
+		}
+		else if (wing == false)
+		{
+			System.out.println("you already have this wing!");
+			shop();
+		}
+		else if (money < 10)
+		{
+			System.out.println("you dont have enough money you only have $" + money);
+			shop();
+		}
+		
+		if(choiceC == 2 && money>=10)
+		{
+			money-=10;
+			System.out.println("what color paint do you want! ");
+			String cchoice = userInput.nextLine();
+			
+		if(color) {
+		carStat.get(0).setRice(carStat.get(0).getRice() +3);
+		color=false;
+		}
+		carStat.get(0).setColor(cchoice);
+		System.out.println("good chouce your car now has" + carStat.get(0).getColor() + " rice and $" + money);
+		shop();
+		//NEED TO FIGURE OUT HOW TO STOP THE MENU FROM COMING UNTIL IM DONE WITH MY USER INPUT, SHOUDLNT BE HARD JUST HAD TO PUSH, MAKE SURE TO LOOK BACK OVER TO SEE THAT NUMBERS MATHC UP
+		}
+		
+		else if (money < 10)
+		{
+			System.out.println("you dont have enough money you only have $" + money);
+			shop();
+		}
+		
+		
+		
 		// add thing and booleans and values and  for color make an if statement to give rice
 		
 		
