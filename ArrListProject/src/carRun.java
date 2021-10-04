@@ -118,7 +118,21 @@ if( choice ==1)
 			turbo=false;
 			int TH = carStat.get(0).getHp()/4;
 			carStat.get(0).setHp(TH);
+		System.out.println( "congrats you now have a turbo and have " + carStat.get(0) + " horsepower");
+			shop();
 				
+			}
+		else if( money<=100)
+			{
+				System.out.println("you dont have enough money yuo only have " + money);
+				shop();
+
+			}
+		else if( turbo == false)
+			{
+				System.out.println("you already have one you can only have one!");
+				shop();
+
 			}
 		if( mchoice ==2)
 			{
@@ -152,6 +166,10 @@ if( choice ==3)
 		// add thing and booleans and values and  for color make an if statement to give rice
 		
 		
+	}
+if(choice ==4)
+	{
+		menuChoice();
 	}
 
 
