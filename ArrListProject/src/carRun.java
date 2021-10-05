@@ -5,6 +5,7 @@ public class carRun
 		static ArrayList<car>carStat= new ArrayList<car>();
 		static Scanner userInput = new Scanner (System.in);
 static int money = 2000;
+static String HI = "GFH LOL";
 	static boolean turbo = true;
 	static boolean Sc = true;
 	static boolean wheel= true;
