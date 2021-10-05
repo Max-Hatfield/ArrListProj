@@ -5,13 +5,23 @@ public class car
 		private String name;
 		private int hp;
 		private int rice;
-		public car(String c, String n, int h, int r)
+		private int cred;
+		public car(String c, String n, int h, int r, int cr)
 		{
 		color = c;
 		name = n;
 		hp = h;
 		rice = r;
+		cred = cr;
 		}
+		public int getCred()
+			{
+				return cred;
+			}
+		public void setCred(int cred)
+			{
+				this.cred = cred;
+			}
 		public String getColor()
 			{
 				return color;
