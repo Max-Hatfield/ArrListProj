@@ -7,6 +7,7 @@ public class carRun
 static int money = 2000;
 static String HI = "GFH LOL";
 static String HI2 = "GFH2 lol";
+static String HI3 = "GFH3 lOl"
 	static boolean turbo = true;
 	static boolean Sc = true;
 	static boolean wheel= true;
